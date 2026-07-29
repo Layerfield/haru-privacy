@@ -1,0 +1,276 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="하루 앱 공식 지원 페이지" />
+    <meta name="theme-color" content="#111111" />
+    <title>하루 지원</title>
+    <style>
+      :root {
+        color-scheme: dark;
+        --background: #111111;
+        --surface: #1c1c1c;
+        --surface-hover: #242424;
+        --ink: #f4f4f2;
+        --muted: #a5a5a1;
+        --quiet: #777773;
+        --line: #343432;
+        --accent: #8f8aff;
+        font-family: -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", "Noto Sans KR", sans-serif;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html,
+      body {
+        min-height: 100%;
+      }
+
+      body {
+        min-height: 100vh;
+        margin: 0;
+        color: var(--ink);
+        background: var(--background);
+        -webkit-font-smoothing: antialiased;
+      }
+
+      a {
+        color: inherit;
+      }
+
+      .site-shell {
+        width: min(100% - 48px, 940px);
+        min-height: 100vh;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+      }
+
+      .site-header {
+        min-height: 74px;
+        border-bottom: 1px solid var(--line);
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+
+      .brand {
+        color: var(--ink);
+        font-size: 18px;
+        font-weight: 760;
+        letter-spacing: -0.02em;
+        text-decoration: none;
+      }
+
+      .header-link {
+        color: var(--muted);
+        font-size: 13px;
+        text-decoration: none;
+      }
+
+      .header-link:hover,
+      .header-link:focus-visible {
+        color: var(--ink);
+      }
+
+      main {
+        width: min(100%, 740px);
+        margin: 0 auto;
+        padding: 72px 0 84px;
+        flex: 1;
+      }
+
+      .breadcrumb {
+        margin: 0 0 18px;
+        color: var(--muted);
+        font-size: 13px;
+      }
+
+      h1 {
+        margin: 0;
+        font-size: clamp(36px, 6vw, 52px);
+        line-height: 1.15;
+        letter-spacing: -0.055em;
+      }
+
+      .title-rule {
+        height: 1px;
+        margin: 30px 0 36px;
+        background: var(--line);
+      }
+
+      .intro {
+        margin-bottom: 42px;
+      }
+
+      .intro p {
+        margin: 0;
+        color: #d2d2cf;
+        font-size: 19px;
+        line-height: 1.7;
+        letter-spacing: -0.025em;
+        word-break: keep-all;
+      }
+
+      .intro p + p {
+        margin-top: 14px;
+      }
+
+      .contact-card {
+        min-height: 96px;
+        padding: 20px 22px;
+        border: 1px solid var(--line);
+        border-radius: 13px;
+        background: var(--surface);
+        display: grid;
+        grid-template-columns: 48px minmax(0, 1fr) auto;
+        align-items: center;
+        gap: 16px;
+        text-decoration: none;
+        transition: background-color 150ms ease, border-color 150ms ease, transform 150ms ease;
+      }
+
+      .contact-card:hover,
+      .contact-card:focus-visible {
+        border-color: #4d4d49;
+        background: var(--surface-hover);
+        outline: none;
+        transform: translateY(-1px);
+      }
+
+      .contact-icon {
+        width: 48px;
+        height: 48px;
+        border-radius: 12px;
+        background: var(--accent);
+        display: grid;
+        place-items: center;
+        color: #111111;
+        font-size: 22px;
+        font-weight: 800;
+      }
+
+      .contact-copy {
+        min-width: 0;
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+      }
+
+      .contact-copy strong {
+        font-size: 16px;
+        letter-spacing: -0.02em;
+      }
+
+      .contact-copy span {
+        overflow: hidden;
+        color: var(--muted);
+        font-size: 14px;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+      }
+
+      .contact-arrow {
+        color: var(--ink);
+        font-size: 25px;
+      }
+
+      .request-note {
+        margin: 18px 3px 0;
+        color: var(--quiet);
+        font-size: 13px;
+        line-height: 1.65;
+        word-break: keep-all;
+      }
+
+      footer {
+        min-height: 76px;
+        border-top: 1px solid var(--line);
+        display: flex;
+        align-items: center;
+        color: var(--quiet);
+        font-size: 12px;
+      }
+
+      footer p {
+        margin: 0;
+      }
+
+      @media (max-width: 600px) {
+        .site-shell {
+          width: min(100% - 32px, 940px);
+        }
+
+        .site-header {
+          min-height: 64px;
+        }
+
+        main {
+          padding: 52px 0 64px;
+        }
+
+        .header-link {
+          font-size: 12px;
+        }
+
+        .intro p {
+          font-size: 17px;
+        }
+
+        .contact-card {
+          padding: 17px;
+          grid-template-columns: 44px minmax(0, 1fr) auto;
+          gap: 13px;
+        }
+
+        .contact-icon {
+          width: 44px;
+          height: 44px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="site-shell">
+      <header class="site-header">
+        <a class="brand" href="../">하루</a>
+        <a class="header-link" href="../">개인정보 처리방침</a>
+      </header>
+
+      <main>
+        <p class="breadcrumb">하루 · 지원</p>
+        <h1>하루 지원</h1>
+        <div class="title-rule"></div>
+
+        <section class="intro" aria-label="지원 안내">
+          <p>하루를 사용하면서 궁금한 점이나 문제가 있다면 알려주세요.</p>
+          <p>확인 후 이메일로 답변드리겠습니다.</p>
+        </section>
+
+        <a
+          class="contact-card"
+          href="mailto:salient-buckram.1r@icloud.com?subject=%ED%95%98%EB%A3%A8%20%EC%A7%80%EC%9B%90%20%EB%AC%B8%EC%9D%98"
+          aria-label="salient-buckram.1r@icloud.com으로 지원 문의 이메일 보내기"
+        >
+          <span class="contact-icon" aria-hidden="true">@</span>
+          <span class="contact-copy">
+            <strong>이메일 문의</strong>
+            <span>salient-buckram.1r@icloud.com</span>
+          </span>
+          <span class="contact-arrow" aria-hidden="true">↗</span>
+        </a>
+
+        <p class="request-note">
+          앱 버전, 기기 모델, iOS 버전과 문제 상황을 함께 보내주시면 더 빠르게 확인할 수 있습니다.
+        </p>
+      </main>
+
+      <footer>
+        <p>© 2026 Donghyun Shin. Haru.</p>
+      </footer>
+    </div>
+  </body>
+</html>
